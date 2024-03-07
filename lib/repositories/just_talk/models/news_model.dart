@@ -5,7 +5,7 @@ class NewsModel {
   final String title;
   final String description;
   final String author;
-  final DateTime date;
+  final String date;
 
 
   NewsModel({
