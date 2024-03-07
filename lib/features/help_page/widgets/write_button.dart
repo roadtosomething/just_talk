@@ -11,6 +11,6 @@ class WriteButton extends StatelessWidget {
           'Написать',
           style: Theme.of(context).textTheme.bodyMedium,
         )
-    );;
+    );
   }
 }

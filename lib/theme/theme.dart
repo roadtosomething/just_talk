@@ -16,6 +16,11 @@ final lightTheme = ThemeData(
     ),
     scaffoldBackgroundColor: Colors.white,
     textTheme: const TextTheme(
+      bodySmall: TextStyle(
+        color: Color(0xFF4A544A),
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+      ),
       bodyLarge: TextStyle(
         color: Color(0xFF4A544A),
         fontWeight: FontWeight.w700,
@@ -30,6 +35,6 @@ final lightTheme = ThemeData(
           color: Color(0xAA4A544A),
           fontWeight: FontWeight.w700,
           fontSize: 14,
-        )
+        ),
     ),
 );

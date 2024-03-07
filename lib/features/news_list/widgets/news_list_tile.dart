@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:just_talk/repositories/just_talk/models/news_model.dart';
 
 class NewsListTile extends StatelessWidget {
   const NewsListTile({
     super.key,
-    required this.pageName,
+    required this.news,
   });
 
-  final String pageName;
+  final NewsModel news;
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +15,15 @@ class NewsListTile extends StatelessWidget {
         leading: const Icon(Icons.message),
         trailing: const Icon(Icons.arrow_forward),
         title: Text(
-          pageName,
+          news.title,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         subtitle: Text(
-          "Описание новости",
+          news.description,
           style: Theme.of(context).textTheme.labelSmall,
         ),
         onTap: () {
-          Navigator.of(context).pushNamed('/new', arguments: pageName);
+          Navigator.of(context).pushNamed('/new', arguments: news);
         });
   }
 }

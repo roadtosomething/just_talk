@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:just_talk/repositories/just_talk/news_list_repository.dart';
 
+import '../../../repositories/just_talk/models/news_model.dart';
 import '../widgets/widgets.dart';
 
 class NewsListScreen extends StatefulWidget {
@@ -10,21 +12,43 @@ class NewsListScreen extends StatefulWidget {
 }
 
 class _NewsListScreenState extends State<NewsListScreen> {
+
+  List<NewsModel>? _newsModelList;
+
+  @override
+  void initState() {
+    _newsListLoad();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("News"),
+        title: const Text("Новости от разработчков"),
       ),
-      body: ListView.separated(
-          itemCount: 20,
+      body: (_newsModelList == null) ?
+      const SizedBox() :
+      ListView.separated(
+          itemCount: _newsModelList!.length,
           separatorBuilder: (context, index) => const Divider(),
           itemBuilder: (context, i) {
-            final pageName = "Новость ${i+1}";
-            return NewsListTile(pageName: pageName);
+            final news = _newsModelList![i];
+            return NewsListTile(news: news);
           }),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.download),
+        onPressed: () async {
+          await _newsListLoad();
+        },
+      ),
     );
   }
+  Future<void> _newsListLoad () async {
+    _newsModelList = await NewsListRepository().getNewsList();
+    setState((){});
+  }
 }
+
 
