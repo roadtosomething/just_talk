@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:just_talk/repositories/just_talk/models/tip_model.dart';
 import 'package:just_talk/repositories/just_talk/tip_repository.dart';
 
 class TipWidget extends StatelessWidget {
