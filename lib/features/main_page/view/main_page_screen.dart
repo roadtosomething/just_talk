@@ -10,7 +10,7 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Расскажи'
+          'Just Talk'
         ),
       ),
       body: const MainMenuView()

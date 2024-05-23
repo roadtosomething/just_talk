@@ -5,14 +5,32 @@ class ChatButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        'Чат со случайным человеком',
-        style: Theme.of(context).textTheme.bodyMedium,
-        textAlign: TextAlign.center,
+    return Padding(
+        padding: const EdgeInsets.all(10.0),
+    child: OutlinedButton(
+      onPressed: ()=>{
+        Navigator.of(context).pushNamed('/chat')
+      },
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(0.0)
+        ),
+        side: const BorderSide(
+          width: 0.4,
+          color: Color(0xFF121212)
+        )
       ),
-      leading: const Icon(Icons.list_alt_sharp),
-      trailing: const Icon(Icons.arrow_forward_ios_outlined),
+      child: ListTile(
+        title: Text(
+          'Чат',
+          style: Theme.of(context).textTheme.bodyMedium,
+          textAlign: TextAlign.center,
+        ),
+        leading: const Icon(Icons.chat),
+        trailing: const Icon(Icons.arrow_forward_ios_outlined),
+        iconColor: Color(0xFF121212),
+      ),
+    ),
     );
   }
 }

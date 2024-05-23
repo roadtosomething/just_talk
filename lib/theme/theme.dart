@@ -1,40 +1,75 @@
 import 'package:flutter/material.dart';
 
+const Color primaryColor = Color(0xFF84A295);
+const Color primaryLightColor = Color(0xFFB7CDC2);
+const Color backgroundLightColor = Color(0xFFEAE6DA);
+const Color surfaceLightColor = Color(0xFFF7F6EE);
+const Color secondaryLightColor = Color(0xFFEFDB96);
+
+const Color primaryDarkColor = Color(0xFF263238);
+const Color backgroundDarkColor = Color(0xFF121212);
+const Color surfaceDarkColor = Color(0xFF1F1F1F);
+const Color secondaryDarkColor = Color(0xFFBB86FC);
+const Color errorColor = Color(0xB6C30025);
+
 final lightTheme = ThemeData(
-    dividerTheme: const DividerThemeData(
-      space: 0,
-      color: Color(0xFF4A544A),
-    ),
-    listTileTheme: const ListTileThemeData(
-      tileColor: Color(0x88FFd96A),
-      iconColor: Color(0xFF4A544A),
-    ),
+
+  colorScheme: const ColorScheme(
+      brightness: Brightness.light,
+      primary: primaryColor,
+      onPrimary: primaryLightColor,
+      secondary: secondaryLightColor,
+      onSecondary: secondaryLightColor,
+      error: errorColor,
+      onError: errorColor,
+      surface: surfaceLightColor,
+      onSurface: surfaceLightColor
+
+  ),
+
     appBarTheme: const AppBarTheme(
       titleTextStyle: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
-      backgroundColor: Colors.orange,
+          fontSize: 20, fontWeight: FontWeight.w700, color: primaryDarkColor),
+      color: primaryLightColor
     ),
-    scaffoldBackgroundColor: Colors.white,
+
+    buttonTheme: const ButtonThemeData(
+      buttonColor: primaryLightColor,
+      hoverColor: primaryColor,
+    ),
+
     textTheme: const TextTheme(
-      bodySmall: TextStyle(
-        color: Color(0xFF4A544A),
-        fontWeight: FontWeight.w500,
-        fontSize: 12,
-      ),
-      bodyLarge: TextStyle(
-        color: Color(0xFF4A544A),
+
+      labelLarge: TextStyle(
+        color: Colors.white60,
         fontWeight: FontWeight.w700,
         fontSize: 25,
       ),
+
+      bodySmall: TextStyle(
+        color: Colors.black54,
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+      ),
+
+      bodyLarge: TextStyle(
+        color: Colors.black87,
+        fontWeight: FontWeight.w700,
+        fontSize: 25,
+      ),
+
         bodyMedium: TextStyle(
-          color: Color(0xFF4A544A),
+          color: Colors.black54,
           fontWeight: FontWeight.w500,
           fontSize: 20,
         ),
+
         labelSmall: TextStyle(
-          color: Color(0xAA4A544A),
+          color: Colors.black38,
           fontWeight: FontWeight.w700,
           fontSize: 14,
         ),
+
     ),
+
 );
