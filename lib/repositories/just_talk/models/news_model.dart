@@ -1,4 +1,4 @@
-import 'package:just_talk/repositories/just_talk/models/author_model.dart';
+import 'package:just_talk/repositories/just_talk/models/user_model.dart';
 
 class NewsModel {
   final int id;
@@ -20,7 +20,7 @@ class NewsModel {
       id: json['id'],
       title: json['title'],
       description: json['description'],
-      author: AuthorModel.fromJson(json['author']).name,
+      author: json['author'],
       date: json['date']
     );
 

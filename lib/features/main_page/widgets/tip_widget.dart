@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:just_talk/repositories/just_talk/tip_repository.dart';
+import 'package:just_talk/services/tip_repository.dart';
 
 class TipWidget extends StatelessWidget {
 
@@ -7,7 +7,7 @@ class TipWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tipRepository = TipRepository();
+    final tipRepository = TipService();
     return Padding(
         padding: const EdgeInsets.all(10.0),
       child: Container(

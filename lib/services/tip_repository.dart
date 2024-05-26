@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:just_talk/repositories/just_talk/models/tip_model.dart';
 import 'package:dio/dio.dart';
 
-class TipRepository {
+class TipService {
 
   Future<TipModel> getTips() async {
     Map <String, String> body = {
