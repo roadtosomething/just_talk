@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart';
 import 'package:just_talk/repositories/just_talk/models/register_model.dart';
 import 'package:just_talk/repositories/just_talk/models/user_login_model.dart';
 import 'package:just_talk/repositories/just_talk/models/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uuid/uuid.dart';
 
 class AuthService {
   static const String apiUrl = 'http://192.168.50.193:8083/api/v1/auth';
@@ -62,6 +62,7 @@ class AuthService {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString('token');
   }
+
 
   Future<UserModel?> getUserInfo(token) async{
     final headers = {

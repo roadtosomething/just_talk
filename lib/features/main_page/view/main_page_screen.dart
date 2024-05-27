@@ -14,7 +14,7 @@ class MainScreen extends StatelessWidget {
         leading:
                     TextButton(
                 onPressed: ()=>{
-              Navigator.of(context).pushNamed('/login')
+              Navigator.of(context).pushNamed('/home')
             },
                 child: const Icon(Icons.login)),
         ),

@@ -58,7 +58,13 @@ class AuthProvider with ChangeNotifier {
     _user = null;
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('token');
+    await prefs.remove('userName');
     notifyListeners();
+  }
+
+  Future<UserModel?> getUserInfo() async{
+    final prefs = await SharedPreferences.getInstance();
+    return _authService.getUserInfo(prefs.get('token'));
   }
 
   Future<void> checkAuthStatus() async {

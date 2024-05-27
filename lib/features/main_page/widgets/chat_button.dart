@@ -9,7 +9,7 @@ class ChatButton extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
     child: OutlinedButton(
       onPressed: ()=>{
-        Navigator.of(context).pushNamed('/chat')
+        Navigator.of(context).pushNamed('/chats')
       },
       style: OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
@@ -22,7 +22,7 @@ class ChatButton extends StatelessWidget {
       ),
       child: ListTile(
         title: Text(
-          'Чат',
+          'Список чатов',
           style: Theme.of(context).textTheme.bodyMedium,
           textAlign: TextAlign.center,
         ),
